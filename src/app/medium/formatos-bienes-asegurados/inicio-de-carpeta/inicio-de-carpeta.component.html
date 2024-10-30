@@ -1,0 +1,206 @@
+<section class="content">
+    <div class="content-block">
+        @for (breadscrum of breadscrums; track breadscrum) {
+        <div class="block-header">
+            <!-- breadcrumb -->
+            <app-breadcrumb [title]="breadscrum.title" [items]="breadscrum.items" [active_item]="breadscrum.active">
+            </app-breadcrumb>
+        </div>
+        }
+
+
+
+
+        <div class="col-md-12">
+            <mat-tab-group>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <i class="material-icons-outlined psr-3">list_alt</i> List View
+                    </ng-template>
+                    <div class="mt-5">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="materialTableHeader">
+                                    <div class="left">
+                                        <ul class="header-buttons-left ms-0">
+                                            <li class="tbl-title">
+                                                <h2>Numerarios</h2>
+                                            </li>
+                                            <li class="tbl-search-box">
+                                                <label for="search-input"><i class="material-icons search-icon">search</i></label>
+                                                <input placeholder="Buscar" type="text" #filter class="browser-default search-field" aria-label="Search box">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="right">
+                                        <ul class="tbl-export-btn">
+                                            <li class="tbl-header-btn">
+                                                <div class="m-l-10" matTooltip="Agregar">
+                                                    <button mat-mini-fab color="primary" (click)="addNew()"><mat-icon class="col-white">add</mat-icon></button>
+                                                </div>
+                                            </li>
+                                            <li class="tbl-header-btn">
+                                                <div class="m-l-10" matTooltip="Recarga">
+                                                    <button mat-mini-fab color="primary" (click)="refresh()">
+                                                        <mat-icon class="col-white">refresh</mat-icon>
+                                                      </button>
+                                                </div>
+                                            </li>
+                                            <li class="tbl-header-btn">
+                                                <div class="m-l-10" [hidden]=!selection.hasValue() matTooltip="Borrar Seleccionados">
+                                                    <button mat-mini-fab color="warn" (click)="removeSelectedRows()">
+                                                        <mat-icon class="col-white">delete
+                                                        </mat-icon>
+                                                      </button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="export-button m-l-10" matTooltip="Exportar Excel">
+                                                    <img src="assets/images/icons/xlsx.png" alt="" (click)="exportExcel()" />
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="body overflow-auto">
+                                    <div class="responsive_table">
+                                        <table mat-table [dataSource]="dataSource" matSort class="mat-cell advance-table">
+                                            <!-- checkbox column -->
+                                            <ng-container matColumnDef="select">
+                                                <mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-6'">
+                                                    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()" [ngClass]="'tbl-checkbox'">
+                                                    </mat-checkbox>
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-6'">
+                                                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)" [ngClass]="'tbl-checkbox'">
+                                                    </mat-checkbox>
+                                                </mat-cell>
+                                            </ng-container>
+                                            <!-- ID columna -->
+                                            <ng-container matColumnDef="ID">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>ID
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.ID}}</mat-cell>
+                                            </ng-container>
+
+                                            <!-- CI -->
+                                            <ng-container matColumnDef="CI">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>CI
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.CI}}</mat-cell>
+                                            </ng-container>
+                                            <!-- FECHA_CI -->
+                                            <ng-container matColumnDef="FECHA_CI">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>FECHA CI
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.FECHA_CI}}</mat-cell>
+                                            </ng-container>
+                                            <!-- TIPO_DELITO -->
+                                            <ng-container matColumnDef="ID_CAT_TIPO_DELITO">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>TIPO DELITO
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.ID_CAT_TIPO_DELITO}}</mat-cell>
+                                            </ng-container>
+                                            <!-- CAUSA_APERTURA_CI -->
+                                            <ng-container matColumnDef="ID_CAT_CAUSA_APERTURA_CI">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>CAUSA
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.ID_CAT_CAUSA_APERTURA_CI}}</mat-cell>
+                                            </ng-container>
+                                            <!-- FISCALIA_ESPECIALIZADA -->
+                                            <ng-container matColumnDef="FISCALIA_ESPECIALIZADA">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>FISCALÍA ESP
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.ID_CAT_FISCALIA}}</mat-cell>
+                                            </ng-container>
+                                            <!-- FISCALIA_FEDERAL -->
+                                            <ng-container matColumnDef="FISCALIA_FEDERAL">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>FISCALÍA FED
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.ID_CAT_FISCALIA_FEDERAL}}</mat-cell>
+                                            </ng-container>
+                                            <!-- TIPO_DE_BIEN -->
+                                            <ng-container matColumnDef="TIPO_DE_BIEN">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>TIPO DE BIEN
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.ID_CAT_TIPO_DE_BIEN}}</mat-cell>
+                                            </ng-container>
+                                            <!-- CARACTERISTICAS -->
+                                            <ng-container matColumnDef="CARACTERISTICAS">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>CARACT.
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.CARACTERISTICAS}}</mat-cell>
+                                            </ng-container>
+                                            <!-- FECHA_DE_ENTREGA_A_AMPF_DEL_INVENTARIO -->
+                                            <ng-container matColumnDef="FECHA_DE_ENTREGA_A_AMPF_DEL_INVENTARIO">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>FECHA DE ENTREGA A AMPF
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.FECHA_DE_ENTREGA_A_AMPF_DEL_INVENTARIO}}</mat-cell>
+                                            </ng-container>
+                                            <!-- UBICACION_DONDE_SE_ENCONTRO_EL_BIEN -->
+                                            <ng-container matColumnDef="UBICACION_DONDE_SE_ENCONTRO_EL_BIEN">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>UBICACION DONDE SE ENCONTRÓ
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.UBICACION_DONDE_SE_ENCONTRO_EL_BIEN}}</mat-cell>
+                                            </ng-container>
+                                            <!-- OBSERVACIONES -->
+                                            <ng-container matColumnDef="OBSERVACIONES">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>OBS
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.OBSERVACIONES}}</mat-cell>
+                                            </ng-container>
+                                            <!-- FECHA_REGISTRO -->
+                                            <ng-container matColumnDef="FECHA_REGISTRO">
+                                                <mat-header-cell *matHeaderCellDef mat-sort-header>FECHA REGISTRO
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row">{{row.FECHA_REGISTRO}}</mat-cell>
+                                            </ng-container>
+                                            <!-- actions -->
+                                            <ng-container matColumnDef="ACTIONS" matTooltip="Editar">
+                                                <mat-header-cell class="pr-0" *matHeaderCellDef>Actions
+                                                </mat-header-cell>
+                                                <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
+                                                    <button mat-icon-button (click)="$event.stopPropagation()" (click)="editCall(row)" class="tbl-action-btn">
+                                                        <app-feather-icons [icon]="'edit'" [class]="'tbl-fav-edit'"></app-feather-icons>
+                                                      </button>
+                                                </mat-cell>
+                                            </ng-container>
+
+                                            <mat-header-row *matHeaderRowDef="displayedColumns">
+                                            </mat-header-row>
+                                            <!-- <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> -->
+                                            <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editCall(row)" [style.cursor]="'pointer'" matRipple>
+                                            </mat-row>
+                                        </table>
+
+                                        <!-- Loading spinner -->
+                                        @if (exampleDatabase?.isTblLoading) {
+                                        <div class="tbl-spinner">
+                                            <mat-progress-spinner color="primary" [diameter]="40" mode="indeterminate">
+                                            </mat-progress-spinner>
+                                        </div>
+                                        }
+
+                                        <!-- context menu start -->
+                                        @if (!exampleDatabase?.isTblLoading) {
+                                        <div class="no-results" [style.display]="dataSource.renderedData.length === 0 ? '' : 'none'">
+                                            No results
+                                        </div>
+                                        }
+                                        <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
+                                        </mat-paginator>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+
+
+    </div>
+</section>

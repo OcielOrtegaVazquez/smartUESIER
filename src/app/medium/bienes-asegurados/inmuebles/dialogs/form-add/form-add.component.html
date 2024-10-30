@@ -1,0 +1,328 @@
+<div class="addContainer">
+    <div class="modalHeader">
+        <div class="editRowModal">
+            <div class="modalHeader clearfix">
+                <div class="modal-about">
+                    {{dialogTitle}}
+                </div>
+            </div>
+        </div>
+        <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div mat-dialog-content>
+        <form class="register-form m-4" [formGroup]="proForm">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>SEDE_SUBSEDE</mat-label>
+                        <input matInput formControlName="SEDE_SUBSEDE" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>CI</mat-label>
+                        <input matInput formControlName="CI" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_CI</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="FECHA_CI">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>DELITO</mat-label>
+                        <input matInput formControlName="DELITO" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_ASEGURAMIENTO</mat-label>
+                        <input matInput [matDatepicker]="pickerA" formControlName="FECHA_ASEGURAMIENTO">
+                        <mat-datepicker-toggle matSuffix [for]="pickerA"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerA></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>MOTIVO_ASEGURAMIENTO</mat-label>
+                        <input matInput formControlName="MOTIVO_ASEGURAMIENTO" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>TIPO</mat-label>
+                        <input matInput formControlName="TIPO" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>CALLE</mat-label>
+                        <input matInput formControlName="CALLE" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>NUM_EXT</mat-label>
+                        <input matInput formControlName="NUM_EXT" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>NUM_INT</mat-label>
+                        <input matInput formControlName="NUM_INT" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>COLONIA</mat-label>
+                        <input matInput formControlName="COLONIA" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>CÓDIGO_POSTAL</mat-label>
+                        <input matInput formControlName="CODIGO_POSTAL" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>MUN_ALC</mat-label>
+                        <input matInput formControlName="MUN_ALC" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ENTIDAD_FED</mat-label>
+                        <input matInput formControlName="ENTIDAD_FED" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>SUPERFICIE_TERR</mat-label>
+                        <input matInput formControlName="SUPERFICIE_TERR" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>SUPERFICIE_CONST</mat-label>
+                        <input matInput formControlName="SUPERFICIE_CONST" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ESTADO_CONSERVACION</mat-label>
+                        <input matInput formControlName="EDO_CONSERVACION" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>VALOR_DICTAMEN</mat-label>
+                        <input matInput formControlName="VALOR_DICTAMEN" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>TIPO_MONEDA</mat-label>
+                        <mat-select formControlName="TIPO_MONEDA" required>
+                            <mat-option value="AFN">Afgani afgano</mat-option>
+                            <mat-option [value]="'MGA'">Ariary malgache</mat-option>
+                            <mat-option [value]="'THB'">Baht tailandés</mat-option>
+                            <mat-option [value]="'PAB'">Balboa</mat-option>
+                            <mat-option [value]="'ETB'">Birr etíope</mat-option>
+                            <mat-option [value]="'BOB'">Boliviano</mat-option>
+                            <mat-option [value]="'VEF'">Bolívar</mat-option>
+                            <mat-option [value]="'GHS'">Cedi</mat-option>
+                            <mat-option [value]="'KES'">Chelín keniano</mat-option>
+                            <mat-option [value]="'SOS'">Chelín somalí</mat-option>
+                            <mat-option [value]="'TZS'">Chelín tanzano</mat-option>
+                            <mat-option [value]="'UGX'">Chelín ugandés</mat-option>
+                            <mat-option [value]="'SVC'">Colón</mat-option>
+                            <mat-option [value]="'CRC'">Colón costarricense</mat-option>
+                            <mat-option [value]="'DKK'">Corona danesa</mat-option>
+                            <mat-option [value]="'ISK'">Corona islandesa</mat-option>
+                            <mat-option [value]="'NOK'">Corona noruega</mat-option>
+                            <mat-option [value]="'SEK'">Corona sueca</mat-option>
+                            <mat-option [value]="'CZK'">Czech Koruna</mat-option>
+                            <mat-option [value]="'NIO'">Córdoba oro</mat-option>
+                            <mat-option [value]="'GMD'">Dalasi</mat-option>
+                            <mat-option [value]="'MKD'">Dinar</mat-option>
+                            <mat-option [value]="'DZD'">Dinar argelino</mat-option>
+                            <mat-option [value]="'BHD'">Dinar bareini</mat-option>
+                            <mat-option [value]="'IQD'">Dinar iraquí</mat-option>
+                            <mat-option [value]="'JOD'">Dinar jordano</mat-option>
+                            <mat-option [value]="'KWD'">Dinar kuwaiti</mat-option>
+                            <mat-option [value]="'LYD'">Dinar libio</mat-option>
+                            <mat-option [value]="'RSD'">Dinar serbio</mat-option>
+                            <mat-option [value]="'TND'">Dinar tunecino</mat-option>
+                            <mat-option [value]="'AED'">Dirham de EAU</mat-option>
+                            <mat-option [value]="'MAD'">Dirham marroquí</mat-option>
+                            <mat-option [value]="'STD'">Dobra</mat-option>
+                            <mat-option [value]="'VND'">Dong</mat-option>
+                            <mat-option [value]="'AMD'">Dram armenio</mat-option>
+                            <mat-option [value]="'MAD'">Dírham marroquí</mat-option>
+                            <mat-option [value]="'AUD'">Dólar australiano</mat-option>
+                            <mat-option [value]="'BSD'">Dólar bahameño</mat-option>
+                            <mat-option [value]="'BZD'">Dólar beliceño</mat-option>
+                            <mat-option [value]="'BMD'">Dólar bermudeño</mat-option>
+                            <mat-option [value]="'CAD'">Dólar canadiense</mat-option>
+                            <mat-option [value]="'BBD'">Dólar de Barbados</mat-option>
+                            <mat-option [value]="'BND'">Dólar de Brunei</mat-option>
+                            <mat-option [value]="'HKD'">Dólar de Hong Kong</mat-option>
+                            <mat-option [value]="'SBD'">Dólar de Islas Salomón</mat-option>
+                            <mat-option [value]="'NZD'">Dólar de la Islas Cook</mat-option>
+                            <mat-option [value]="'KYD'">Dólar de las Islas Cayman</mat-option>
+                            <mat-option [value]="'NAD'">Dólar de Namibia</mat-option>
+                            <mat-option [value]="'SGD'">Dólar de Singapur</mat-option>
+                            <mat-option [value]="'SRD'">Dólar de Surinam</mat-option>
+                            <mat-option [value]="'TTD'">Dólar de Trinidad y Tobago</mat-option>
+                            <mat-option [value]="'XCD'">Dólar del Caribe oriental</mat-option>
+                            <mat-option [value]="'USD'">Dólar estadounidense</mat-option>
+                            <mat-option [value]="'FJD'">Dólar fiyiano</mat-option>
+                            <mat-option [value]="'GYD'">Dólar guyanés</mat-option>
+                            <mat-option [value]="'JMD'">Dólar jamaiquino</mat-option>
+                            <mat-option [value]="'LRD'">Dólar liberiano</mat-option>
+                            <mat-option [value]="'NZD'">Dólar neozelandés</mat-option>
+                            <mat-option [value]="'AUD'">Dólar tuvaluano</mat-option>
+                            <mat-option [value]="'ZWL'">Dólar zimbabuense</mat-option>
+                            <mat-option [value]="'CVE'">Escudo caboverdiano</mat-option>
+                            <mat-option [value]="'EUR'">Euro</mat-option>
+                            <mat-option [value]="'ANG'">Florín antillano neerlandés</mat-option>
+                            <mat-option [value]="'AWG'">Florín arubeño</mat-option>
+                            <mat-option [value]="'ANG'">Florín holandés</mat-option>
+                            <mat-option [value]="'HUF'">Forinto húngaro</mat-option>
+                            <mat-option [value]="'BIF'">Franco burundés</mat-option>
+                            <mat-option [value]="'XAF'">Franco CFA de África Central</mat-option>
+                            <mat-option [value]="'XOF'">Franco CFA de África Occidental</mat-option>
+                            <mat-option [value]="'XPF'">Franco CFP</mat-option>
+                            <mat-option [value]="'KMF'">Franco comorense</mat-option>
+                            <mat-option [value]="'CDF'">Franco congoleño</mat-option>
+                            <mat-option [value]="'GNF'">Franco guineano</mat-option>
+                            <mat-option [value]="'RWF'">Franco ruandés</mat-option>
+                            <mat-option [value]="'CHF'">Franco suizo</mat-option>
+                            <mat-option [value]="'CHW'">Franco WIR</mat-option>
+                            <mat-option [value]="'DJF'">Franco yibutiano</mat-option>
+                            <mat-option [value]="'HTG'">Gourde</mat-option>
+                            <mat-option [value]="'UAH'">Grivnia</mat-option>
+                            <mat-option [value]="'PYG'">Guaraní</mat-option>
+                            <mat-option [value]="'PGK'">Kina</mat-option>
+                            <mat-option [value]="'LAK'">Kip laosiano</mat-option>
+                            <mat-option [value]="'HRK'">Kuna</mat-option>
+                            <mat-option [value]="'MWK'">Kwacha malauí</mat-option>
+                            <mat-option [value]="'ZMW'">Kwacha zambiano</mat-option>
+                            <mat-option [value]="'AOA'">Kwanza angoleño</mat-option>
+                            <mat-option [value]="'MMK'">Kyat birmano</mat-option>
+                            <mat-option [value]="'GEL'">Lari</mat-option>
+                            <mat-option [value]="'ALL'">Lek</mat-option>
+                            <mat-option [value]="'HNL'">Lempira</mat-option>
+                            <mat-option [value]="'SLL'">Leone</mat-option>
+                            <mat-option [value]="'MDL'">Leu Moldavo</mat-option>
+                            <mat-option [value]="'RON'">Leu rumano</mat-option>
+                            <mat-option [value]="'BGN'">Lev</mat-option>
+                            <mat-option [value]="'SHP'">Libra de Santa Helena</mat-option>
+                            <mat-option [value]="'EGP'">Libra egipcia</mat-option>
+                            <mat-option [value]="'GBP'">Libra esterlina</mat-option>
+                            <mat-option [value]="'GIP'">Libra gibraltareña</mat-option>
+                            <mat-option [value]="'LBP'">Libra libanesa</mat-option>
+                            <mat-option [value]="'FKP'">Libra malvinense</mat-option>
+                            <mat-option [value]="'SYP'">Libra siria</mat-option>
+                            <mat-option [value]="'SDG'">Libra sudanesa</mat-option>
+                            <mat-option [value]="'SSP'">Libra sursudanesa</mat-option>
+                            <mat-option [value]="'SZL'">Lilangeni</mat-option>
+                            <mat-option [value]="'TRY'">Lira turca</mat-option>
+                            <mat-option [value]="'LSL'">Loti</mat-option>
+                            <mat-option [value]="'AZN'">Manat azerbaiyano</mat-option>
+                            <mat-option [value]="'TMT'">Manat turcomano</mat-option>
+                            <mat-option [value]="'BAM'">Marco bosnioherzegovino</mat-option>
+                            <mat-option [value]="'MZN'">Metical mozambiqueño</mat-option>
+                            <mat-option [value]="'BOV'">Mvdol</mat-option>
+                            <mat-option [value]="'NGN'">Naira</mat-option>
+                            <mat-option [value]="'ERN'">Nakfa</mat-option>
+                            <mat-option [value]="'BTN'">Ngultrum butanés</mat-option>
+                            <mat-option [value]="'TWD'">Nuevo dólar de Taiwán</mat-option>
+                            <mat-option [value]="'PEN'">Nuevo Sol</mat-option>
+                            <mat-option [value]="'ILS'">Nuevo séquel</mat-option>
+                            <mat-option [value]="'MOP'">Pataca</mat-option>
+                            <mat-option [value]="'TOP'">Pa'anga</mat-option>
+                            <mat-option [value]="'ARS'">Peso argentino</mat-option>
+                            <mat-option [value]="'CLP'">Peso chileno</mat-option>
+                            <mat-option [value]="'COP'">Peso colombiano</mat-option>
+                            <mat-option [value]="'CUP'">Peso cubano</mat-option>
+                            <mat-option [value]="'DOP'">Peso dominicano</mat-option>
+                            <mat-option [value]="'PHP'">Peso filipino</mat-option>
+                            <mat-option [value]="'MXN'">Peso mexicano</mat-option>
+                            <mat-option [value]="'UYU'">Peso uruguayo</mat-option>
+                            <mat-option [value]="'BWP'">Pula</mat-option>
+                            <mat-option [value]="'GTQ'">Quetzal</mat-option>
+                            <mat-option [value]="'ZAR'">Rand</mat-option>
+                            <mat-option [value]="'BRL'">Real brasileño</mat-option>
+                            <mat-option [value]="'CNY'">Renminbi</mat-option>
+                            <mat-option [value]="'IRR'">Rial iraní</mat-option>
+                            <mat-option [value]="'OMR'">Rial omaní</mat-option>
+                            <mat-option [value]="'YER'">Rial yemení</mat-option>
+                            <mat-option [value]="'KHR'">Riel camboyano</mat-option>
+                            <mat-option [value]="'MYR'">Ringgit malayo</mat-option>
+                            <mat-option [value]="'QAR'">Riyal catarí</mat-option>
+                            <mat-option [value]="'SAR'">Riyal saudí</mat-option>
+                            <mat-option [value]="'BYR'">Rublo bielorruso</mat-option>
+                            <mat-option [value]="'RUB'">Rublo ruso</mat-option>
+                            <mat-option [value]="'MVR'">Rupia de maldivas</mat-option>
+                            <mat-option [value]="'MUR'">Rupia de Mauricio</mat-option>
+                            <mat-option [value]="'SCR'">Rupia de Seychelles</mat-option>
+                            <mat-option [value]="'LKR'">Rupia de Sri Lanka</mat-option>
+                            <mat-option [value]="'INR'">Rupia india</mat-option>
+                            <mat-option [value]="'IDR'">Rupia indonesia</mat-option>
+                            <mat-option [value]="'NPR'">Rupia nepalí</mat-option>
+                            <mat-option [value]="'PKR'">Rupia pakistaní</mat-option>
+                            <mat-option [value]="'KRW'">Won</mat-option>
+                            <mat-option [value]="'KPW'">Won norcoreano</mat-option>
+                            <mat-option [value]="'JPY'">Yen</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>OBSERVACIONES</mat-label>
+                        <input matInput formControlName="OBSERVACIONES" required>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" [disabled]="!proForm.valid" [mat-dialog-close]="1" (click)="submit()" (click)="confirmAdd()">Guardar </button>
+                        <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
