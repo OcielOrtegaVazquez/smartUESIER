@@ -1,0 +1,196 @@
+<div class="addContainer">
+    <div class="modalHeader">
+        <div class="editRowModal">
+            <div class="modalHeader clearfix">
+                <div class="modal-about">
+                    {{dialogTitle}} || {{entregaDeMuestras.ID_CAT_FISCALIA}}
+                </div>
+            </div>
+        </div>
+        <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div mat-dialog-content>
+        <form class="register-form m-4" [formGroup]="proForm">
+            <div class="row">
+                <!-- ID -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2" hidden>
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID</mat-label>
+                        <input matInput formControlName="ID">
+                    </mat-form-field>
+                </div>
+                <!-- CI -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2" hidden>
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>CI</mat-label>
+                        <input matInput formControlName="CI">
+                    </mat-form-field>
+                </div>
+                <!-- ID_CI -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2" hidden>
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CI</mat-label>
+                        <input matInput formControlName="ID_CI">
+                    </mat-form-field>
+                </div>
+                <!-- NUMERO_REGISTRO_EN_JN -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>NUMERO_REGISTRO_EN_JN</mat-label>
+                        <input matInput formControlName="NUMERO_REGISTRO_EN_JN">
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_FISCALIA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_FISCALIA</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_FISCALIA"> -->
+                        <mat-select id="ID_CAT_FISCALIA" formControlName="ID_CAT_FISCALIA" required>
+                            <mat-option [value]="fiscalia.ID" *ngFor="let fiscalia of FISCALIA"> {{fiscalia.FISCALIA}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_FISCALIA_FEDERAL -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_FISCALIA_FEDERAL</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_FISCALIA"> -->
+                        <mat-select id="ID_CAT_FISCALIA_FEDERAL" formControlName="ID_CAT_FISCALIA_FEDERAL" required>
+                            <mat-option [value]="FISCALIA_FEDERAL.ID" *ngFor="let FISCALIA_FEDERAL of FISCALIA_FEDERAL"> {{FISCALIA_FEDERAL.FISCALIA_FEDERAL}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_TIPO_OBJETO -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_TIPO_OBJETO</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_TIPO_OBJETO"> -->
+                        <mat-select id="ID_CAT_TIPO_OBJETO" formControlName="ID_CAT_TIPO_OBJETO" required>
+                            <mat-option [value]="OBJETO.ID" *ngFor="let OBJETO of OBJETO"> {{OBJETO.TIPO_OBJETO}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_EMPLEADO_ENTREGA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_EMPLEADO_ENTREGA</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_EMPLEADO"> -->
+                        <mat-select id="ID_CAT_EMPLEADO_ENTREGA" formControlName="ID_CAT_EMPLEADO_ENTREGA" required>
+                            <mat-option [value]="ampf.ID" *ngFor="let ampf of AMPFS"> {{ampf.NOMBRE2}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_ROL_ENTREGA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_ROL_ENTREGA</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_ROL"> -->
+                        <mat-select id="ID_CAT_ROL_ENTREGA" formControlName="ID_CAT_ROL_ENTREGA" required>
+                            <mat-option [value]="CARGO.ID" *ngFor="let CARGO of CARGOS"> {{CARGO.NOMBRE}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_EMPLEADO_RECIBE -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_EMPLEADO_RECIBE</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_EMPLEADO"> -->
+                        <mat-select id="ID_CAT_EMPLEADO_RECIBE" formControlName="ID_CAT_EMPLEADO_RECIBE" required>
+                            <mat-option [value]="ampf.ID" *ngFor="let ampf of AMPFS"> {{ampf.NOMBRE2}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_ROL_RECIBE -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_ROL_RECIBE</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_ROL"> -->
+                        <mat-select id="ID_CAT_ROL_RECIBE" formControlName="ID_CAT_ROL_RECIBE" required>
+                            <mat-option [value]="CARGO.ID" *ngFor="let CARGO of CARGOS"> {{CARGO.NOMBRE}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- FECHA_ENTREGA_MUESTRA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_ENTREGA_MUESTRA</mat-label>
+                        <input matInput [matDatepicker]="FECHA_ENTREGA_MUESTRA" formControlName="FECHA_ENTREGA_MUESTRA" required>
+                        <mat-datepicker-toggle matSuffix [for]="FECHA_ENTREGA_MUESTRA"></mat-datepicker-toggle>
+                        <mat-datepicker #FECHA_ENTREGA_MUESTRA></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_TIPO_DE_BIEN -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_TIPO_DE_BIEN</mat-label>
+                        <!--<input matInput formControlName="ID_CAT_TIPO_DE_BIEN" required>-->
+                        <mat-select id="ID_CAT_TIPO_DE_BIEN" formControlName="ID_CAT_TIPO_DE_BIEN" required>
+                            <mat-option [value]="tipoBien.ID" *ngFor="let tipoBien of TIPO_BIEN"> {{tipoBien.TIPOBIEN}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- CARACTERISTICAS -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>CARACTERISTICAS</mat-label>
+                        <input matInput formControlName="CARACTERISTICAS">
+                    </mat-form-field>
+                </div>
+                <!-- FOLIO_ENTREGA_RECEPCION -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FOLIO_ENTREGA_RECEPCION</mat-label>
+                        <input matInput formControlName="FOLIO_ENTREGA_RECEPCION">
+                    </mat-form-field>
+                </div>
+                <!-- OFICIO_ENTREGA_RECEPCION -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>OFICIO_ENTREGA_RECEPCION</mat-label>
+                        <input matInput formControlName="OFICIO_ENTREGA_RECEPCION">
+                    </mat-form-field>
+                </div>
+                <!-- FECHA_ENTREGA_RECEPCION -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_ENTREGA_RECEPCION</mat-label>
+                        <input matInput [matDatepicker]="FECHA_ENTREGA_RECEPCION" formControlName="FECHA_ENTREGA_RECEPCION" required>
+                        <mat-datepicker-toggle matSuffix [for]="FECHA_ENTREGA_RECEPCION"></mat-datepicker-toggle>
+                        <mat-datepicker #FECHA_ENTREGA_RECEPCION></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <!-- OBSERVACIONES -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>OBSERVACIONES</mat-label>
+                        <input matInput formControlName="OBSERVACIONES" required>
+                        <!-- <mat-select id="ID_CAT_TIPO_DE_BIEN" formControlName="ID_CAT_TIPO_DE_BIEN" required>
+                            <mat-option [value]="tipoBien.ID" *ngFor="let tipoBien of TIPO_BIEN"> {{tipoBien.TIPOBIEN}}</mat-option>
+                        </mat-select> -->
+                    </mat-form-field>
+                </div>
+                <!-- FECHA_REGISTRO_ENTREGA_MUESTRA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_REGISTRO_ENTREGA_MUESTRA</mat-label>
+                        <input matInput [matDatepicker]="FECHA_REGISTRO_ENTREGA_MUESTRA" formControlName="FECHA_REGISTRO_ENTREGA_MUESTRA" required>
+                        <mat-datepicker-toggle matSuffix [for]="FECHA_REGISTRO_ENTREGA_MUESTRA"></mat-datepicker-toggle>
+                        <mat-datepicker #FECHA_REGISTRO_ENTREGA_MUESTRA></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" [disabled]="!proForm.valid" [mat-dialog-close]="1" (click)="submit()" (click)="confirmAdd()">Guardar </button>
+                        <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

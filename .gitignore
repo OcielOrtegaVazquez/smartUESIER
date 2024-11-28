@@ -1,0 +1,230 @@
+# Ignora la carpeta node_modules
+/node_modules
+
+# Ignora la carpeta .angular
+/.angular/cache
+
+  ../../desktop.ini
+        ../../hola
+        ../../node_modules/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../package.json
+        ../../smartUESIER/
+        ../../weka.log
+
+        ../../desktop.ini
+        ../../hola
+        ../../node_modules/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../package.json
+        ../../smartUESIER/
+        ../../desktop.ini
+        ../../hola
+        ../../node_modules/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../package.json
+        ../../desktop.ini
+        ../../hola
+        ../../node_modules/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../desktop.ini
+        ../../hola
+        ../../node_modules/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../desktop.ini
+        ../../hola
+        ../../node_modules/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../package.json
+        ../../smartUESIER/
+        ../../weka.log
+        ../../desktop.ini
+        ../../hola
+        ../../node_modules/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../package.json
+        ../../package.json
+        ../../smartUESIER/
+        ../../smartUESIER/
+        ../../weka.log
+
+        ../../weka.log
+
+        ../../.angular-config.json
+        ../../.config/
+        ../../.dbclient/
+        ../../.eslintrc.json
+        ../../.gitconfig
+        ../../.gk/
+        ../../.ionic/
+        ../../.lesshst
+        ../../.npmrc
+        ../../.openjfx/
+        ../../.rest-client/
+        ../../.sonarlint/
+        ../../.th-client/
+        ../../.vscode-R/
+        ../../.vscode/
+        ../../AppData/
+        ../../CREATE TABLE [sam].[B_A_AERONAVES] .txt
+        ../../Contacts/
+        ../01_BIENES_A_DISPOSICION.xlsx
+        ../01_INICIO_DE_CARPETA.xlsx
+        ../02_ACUERDO_DE_ASEGURAMIENTO.xlsx
+        ../03_SOLICITUD_DE_PERITAJE.xlsx
+        ../04_ENTREGA_DE_MUESTRA_CFPF.xlsx
+        ../05_RESULTADO_DICTAMEN_PERICIAL.xlsx
+        ../AIC.txt
+        ../API-BIENES-ASEGURADOS/
+        ../BAxInicio.txt
+        ../Estatuto y Ley Fiscalia/
+        ../Google Chrome.lnk
+        ../HorasSS.xlsx
+        ../Ligas justicianet.xlsx
+        ../ME.html
+        ../SCAN/
+        ../Visual Studio Code.lnk
+        ../Win_fgr_with_status_V.2.1.exe
+        ../apiCRUD/
+        ../apiCRUD2/
+        ../asignaFiscalias.txt
+        ../desktop.ini
+        ../formBA/
+        ../ip.txt
+        ../repositorioBienesAsegurados.lnk
+        ./
+        ../yeah/
+        ../yeah2/
+        ../../Documents/
+        ../../Downloads/
+        ../../Favorites/
+        ../../Links/
+        ../../Music/
+        ../../NTUSER.DAT
+        ../../NTUSER.DAT{35899eb2-b942-11ed-954b-047c166433c7}.TxR.0.regtrans-ms
+        ../../NTUSER.DAT{35899eb2-b942-11ed-954b-047c166433c7}.TxR.1.regtrans-ms
+        ../../NTUSER.DAT{35899eb2-b942-11ed-954b-047c166433c7}.TxR.2.regtrans-ms
+        ../../NTUSER.DAT{35899eb2-b942-11ed-954b-047c166433c7}.TxR.blf
+        ../../NTUSER.DAT{35899eb3-b942-11ed-954b-047c166433c7}.TM.blf
+        ../../NTUSER.DAT{35899eb3-b942-11ed-954b-047c166433c7}.TMContainer00000000000000000001.regtrans-ms
+        ../../NTUSER.DAT{35899eb3-b942-11ed-954b-047c166433c7}.TMContainer00000000000000000002.regtrans-ms
+        "../../OneDrive - Fiscal\303\255a General de la Rep\303\272blica/"
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../Pictures/
+        ../../Saved Games/
+        ../../Searches/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../Pictures/
+        ../../Saved Games/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../Pictures/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../Pictures/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../Pictures/
+        ../../Saved Games/
+        ../../Searches/
+        ../../Videos/
+        ../../apiapi/
+        ../../OneDriveCloudTemp/
+        ../../PGP Keyrings/
+        ../../Pictures/
+        ../../Saved Games/
+        ../../Searches/
+        ../../Videos/
+        ../../apiapi/
+        ../../backend/
+        ../../Searches/
+        ../../Videos/
+        ../../apiapi/
+        ../../backend/
+        ../../concept/
+        ../../apiapi/
+        ../../backend/
+        ../../concept/
+        ../../desktop.ini
+        ../../backend/
+        ../../concept/
+        ../../desktop.ini
+        ../../concept/
+        ../../desktop.ini
+        ../../hola
+        ../../hola
+        ../../node_modules/
+        ../../node_modules/
+        ../../nsqk/
+        ../../nsqk/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../ntuser.ini
+        ../../package-lock.json
+        ../../package-lock.json
+        ../../package.json
+        ../../package.json
+        ../../smartUESIER/
+        ../../weka.log
+        ../../weka.log

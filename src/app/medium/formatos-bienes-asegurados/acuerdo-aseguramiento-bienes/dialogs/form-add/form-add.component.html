@@ -1,0 +1,179 @@
+<div class="addContainer">
+    <div class="modalHeader">
+        <div class="editRowModal">
+            <div class="modalHeader clearfix">
+                <div class="modal-about">
+                    {{dialogTitle}} || {{acuerdoDeAseguramiento.ID_CAT_FISCALIA}}
+                </div>
+            </div>
+        </div>
+        <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div mat-dialog-content>
+        <form class="register-form m-4" [formGroup]="proForm">
+            <div class="row">
+                <!-- ID -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2" hidden>
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID</mat-label>
+                        <input matInput formControlName="ID">
+                    </mat-form-field>
+                </div>
+                <!-- CI -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2" hidden>
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>CI</mat-label>
+                        <input matInput formControlName="CI">
+                    </mat-form-field>
+                </div>
+                <!-- ID_CI -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2" hidden>
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CI</mat-label>
+                        <input matInput formControlName="ID_CI">
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_FISCALIA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_FISCALIA</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_FISCALIA"> -->
+                        <mat-select id="ID_CAT_FISCALIA" formControlName="ID_CAT_FISCALIA" required>
+                            <mat-option [value]="fiscalia.ID" *ngFor="let fiscalia of FISCALIA"> {{fiscalia.FISCALIA}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_TIPO_DE_BIEN -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>TIPO_DE_BIEN</mat-label>
+                        <!--<input matInput formControlName="ID_CAT_TIPO_DE_BIEN" required>-->
+                        <mat-select id="ID_CAT_TIPO_DE_BIEN" formControlName="ID_CAT_TIPO_DE_BIEN" required>
+                            <mat-option [value]="tipoBien.ID" *ngFor="let tipoBien of TIPO_BIEN"> {{tipoBien.TIPOBIEN}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_EMPLEADO -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_EMPLEADO</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_EMPLEADO"> -->
+                        <mat-select id="ID_CAT_EMPLEADO" formControlName="ID_CAT_EMPLEADO" required>
+                            <mat-option [value]="ampf.ID" *ngFor="let ampf of AMPFS"> {{ampf.NOMBRE2}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_ROL -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_ROL</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_ROL"> -->
+                        <mat-select id="ID_CAT_ROL" formControlName="ID_CAT_ROL" required>
+                            <mat-option [value]="CARGO.ID" *ngFor="let CARGO of CARGOS"> {{CARGO.NOMBRE}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- FECHA_ACUERDO_ASEGURAMIENTO -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_ACUERDO_ASEGURAMIENTO</mat-label>
+                        <input matInput [matDatepicker]="FECHA_ACUERDO_ASEGURAMIENTO" formControlName="FECHA_ACUERDO_ASEGURAMIENTO" required>
+                        <mat-datepicker-toggle matSuffix [for]="FECHA_ACUERDO_ASEGURAMIENTO"></mat-datepicker-toggle>
+                        <mat-datepicker #FECHA_ACUERDO_ASEGURAMIENTO></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_SITUACION_JURIDICA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_SITUACION_JURIDICA</mat-label>
+                        <!-- <input matInput formControlName="ID_CAT_SITUACION_JURIDICA" required> -->
+                        <mat-select id="ID_CAT_SITUACION_JURIDICA" formControlName="ID_CAT_SITUACION_JURIDICA" required>
+                            <mat-option [value]="SITUACION_JURIDICA.ID" *ngFor="let SITUACION_JURIDICA of SITUACION"> {{SITUACION_JURIDICA.SITUACION_JURIDICA}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- ID_CAT_LUGAR_ENTREGA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>ID_CAT_LUGAR_ENTREGA</mat-label>
+                        <!-- </1><input matInput formControlName="ID_CAT_LUGAR_ENTREGA" required> -->
+                        <mat-select id="ID_CAT_LUGAR_ENTREGA" formControlName="ID_CAT_LUGAR_ENTREGA" required>
+                            <mat-option [value]="LUGAR_ENTREGA.ID" *ngFor="let LUGAR_ENTREGA of ENTREGA"> {{LUGAR_ENTREGA.LUGAR_ENTREGA}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- DIRECCION_LUGAR_ENTREGA -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>DIRECCION_LUGAR_ENTREGA</mat-label>
+                        <input matInput formControlName="DIRECCION_LUGAR_ENTREGA" required>
+                        <!-- <mat-select id="ID_CAT_FISCALIA_FEDERAL" formControlName="ID_CAT_FISCALIA_FEDERAL" required>
+                            <mat-option [value]="fiscaliaFederal.ID" *ngFor="let fiscaliaFederal of FISCALIA_FEDERAL"> {{fiscaliaFederal.FISCALIA_FEDERAL}}</mat-option>
+                        </mat-select> -->
+                    </mat-form-field>
+                </div>
+                <!-- FOLIO_NOTIFICACION_URM_DF -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FOLIO_NOTIFICACION_URM_DF</mat-label>
+                        <input matInput formControlName="FOLIO_NOTIFICACION_URM_DF">
+                        <!-- <mat-select id="ID_CAT_FISCALIA_FEDERAL" formControlName="ID_CAT_FISCALIA_FEDERAL" required>
+                            <mat-option [value]="fiscaliaFederal.ID" *ngFor="let fiscaliaFederal of FISCALIA_FEDERAL"> {{fiscaliaFederal.FISCALIA_FEDERAL}}</mat-option>
+                        </mat-select> -->
+                    </mat-form-field>
+                </div>
+                <!-- FECHA_NOTIFICACION_REGISTRO -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_NOTIFICACION_REGISTRO</mat-label>
+                        <input matInput [matDatepicker]="FECHA_NOTIFICACION_REGISTRO" formControlName="FECHA_NOTIFICACION_REGISTRO" required>
+                        <mat-datepicker-toggle matSuffix [for]="FECHA_NOTIFICACION_REGISTRO"></mat-datepicker-toggle>
+                        <mat-datepicker #FECHA_NOTIFICACION_REGISTRO></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <!-- NUMERO_REGISTRO_EN_JN -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>NUMERO_REGISTRO_EN_JN</mat-label>
+                        <input matInput formControlName="NUMERO_REGISTRO_EN_JN" required>
+                        <!-- <mat-select id="ID_CAT_TIPO_DE_BIEN" formControlName="ID_CAT_TIPO_DE_BIEN" required>
+                            <mat-option [value]="tipoBien.ID" *ngFor="let tipoBien of TIPO_BIEN"> {{tipoBien.TIPOBIEN}}</mat-option>
+                        </mat-select> -->
+                    </mat-form-field>
+                </div>
+                <!-- OBSERVACIONES -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>OBSERVACIONES</mat-label>
+                        <input matInput formControlName="OBSERVACIONES" required>
+                        <!-- <mat-select id="ID_CAT_TIPO_DE_BIEN" formControlName="ID_CAT_TIPO_DE_BIEN" required>
+                            <mat-option [value]="tipoBien.ID" *ngFor="let tipoBien of TIPO_BIEN"> {{tipoBien.TIPOBIEN}}</mat-option>
+                        </mat-select> -->
+                    </mat-form-field>
+                </div>
+                <!-- FECHA_REGISTRO_DE_ACUERDO_ASEGURAMIENTO -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                        <mat-label>FECHA_REGISTRO_DE_ACUERDO_ASEGURAMIENTO</mat-label>
+                        <input matInput [matDatepicker]="FECHA_REGISTRO_DE_ACUERDO_ASEGURAMIENTO" formControlName="FECHA_REGISTRO_DE_ACUERDO_ASEGURAMIENTO" required>
+                        <mat-datepicker-toggle matSuffix [for]="FECHA_REGISTRO_DE_ACUERDO_ASEGURAMIENTO"></mat-datepicker-toggle>
+                        <mat-datepicker #FECHA_REGISTRO_DE_ACUERDO_ASEGURAMIENTO></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" [disabled]="!proForm.valid" [mat-dialog-close]="1" (click)="submit()" (click)="confirmAdd()">Guardar </button>
+                        <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

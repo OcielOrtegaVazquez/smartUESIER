@@ -1,0 +1,198 @@
+<section class="content">
+    <div class="content-block">
+        @for (breadscrum of breadscrums; track breadscrum) {
+        <div class="block-header">
+            <!-- breadcrumb -->
+            <app-breadcrumb [title]="breadscrum.title" [items]="breadscrum.items" [active_item]="breadscrum.active">
+            </app-breadcrumb>
+        </div>
+        }
+
+
+        <!-- Aeronaves -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>Bienes Asegurados</h2>
+                    </div>
+                    <div class="body">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-purple order-info-box7">
+                                    <div *ngFor="let item of data" class="info-box7-block">
+                                        <h5 class="m-b-20">AERONAVES</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>{{item.TOTAL_CI}}</span></h4>
+                                        <p class="m-b-0">CI con aeronaves aseguradas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-orange order-info-box7">
+                                    <div *ngFor="let item of dataEmbarcaciones" class="info-box7-block">
+                                        <h5 class="m-b-20">EMBARCACIONES</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>{{item.TOTAL_CI_EMBARCACIONES}}</span></h4>
+                                        <p class="m-b-0">CI con embarcaciones aseguradas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-blue order-info-box7">
+                                    <div *ngFor="let item of dataInmuebles" class="info-box7-block">
+                                        <h5 class="m-b-20">INMUEBLES</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>{{item.TOTAL_CI_INMUEBLES}}</span></h4>
+                                        <p class="m-b-0">CI con inmuebles asegurados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-green order-info-box7">
+                                    <div *ngFor="let item of dataNumerarios" class="info-box7-block">
+                                        <h5 class="m-b-20">NUMERARIOS</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>{{item.TOTAL_CI_NUMERARIOS}}</span></h4>
+                                        <p class="m-b-0">CI con numerarios asegurados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-red order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">VEHÍCULOS</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con vehículos asegurados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-green order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">NARCÓTICOS</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con narcóticos asegurados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-purple order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">ARMAS</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con armas aseguradas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-orange order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">FAUNA</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con fauna asegurada</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-blue order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">FLORA</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con flora asegurada</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-orange order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">HIDROCARBUROS</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con hidrocarburos asegurada</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-red order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">JOYAS</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con joyas aseguradas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-green order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">MENAJE</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con menajes asegurados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-purple order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">NUMISMÁTICA</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con numismática asegurada</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-green order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">OBRAS DE ARTE</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con obras de arte aseguradas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-blue order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">SEMOVIENTES</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con semovientes asegurados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="info-box7 l-bg-orange order-info-box7">
+                                    <div class="info-box7-block">
+                                        <h5 class="m-b-20">TÍTULOS DE CREDITO</h5>
+                                        <h4 class="text-end"><i class="fas fa-folder-open float-start"></i><span>xxxxx</span></h4>
+                                        <p class="m-b-0">CI con títulos de credito asegurados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Aeronaves -->
+
+
+
+
+
+
+
+
+
+    </div>
+</section>
